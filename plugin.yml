@@ -1,0 +1,9 @@
+name: MobGuns
+main: me.sachal2406.plugins.Main
+author: sachal2406
+version: 1.0.1
+commands:
+  mgreload:
+    description: reloads the config
+  mg:
+    description: infos  

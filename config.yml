@@ -1,0 +1,13 @@
+#   ############################################################
+#   # +------------------------------------------------------+ #
+#   # |              MobGun Main Configuration               | #
+#   # +------------------------------------------------------+ #
+#   ############################################################
+
+Prefix: '&3&l[MobGuns] &a'
+Mob-Launched: '&9&lSlime lancé!'
+Gun-Ready: '&aTu peux maintenant réutiliser ton arme à slimes!'
+Wait-Before-Using-Again: '&cAttends 5 sec. entre chaque utilisation'
+Config-Reloaded: '&aConfig rechargée avec succès!'
+
+
