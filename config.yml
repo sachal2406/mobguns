@@ -4,10 +4,11 @@
 #   # +------------------------------------------------------+ #
 #   ############################################################
 
-Prefix: '&3&l[MobGuns] &a'
-Mob-Launched: '&9&lSlime lancé!'
-Gun-Ready: '&aTu peux maintenant réutiliser ton arme à slimes!'
-Wait-Before-Using-Again: '&cAttends 5 sec. entre chaque utilisation'
-Config-Reloaded: '&aConfig rechargée avec succès!'
-
-
+Prefix: '&9&lMOBGUNS &4&l> &a'
+Pig-Launched: 'Pig Launched !'
+Sheep-Launched: 'Sheep Launched !'
+Creeper-Launched: 'Creeper Launched !'
+Villager-Launched: 'Villager Launched !'
+Gun-Ready: 'You can now use again your gun !'
+Wait-Before-Using-Again: '&cwait 5 seconds before each use !'
+Config-Reloaded: '&aConfig reloaded !'
