@@ -334,8 +334,6 @@ public class Main extends JavaPlugin implements Listener{
           
             	
         } else {
-          	  
-            	Player p = e.getPlayer();
             
             	final ItemStack piglauncher = new ItemStack(Material.BLAZE_ROD, 1);
             	final ItemMeta piglaunchermeta = piglauncher.getItemMeta();
@@ -359,23 +357,19 @@ public class Main extends JavaPlugin implements Listener{
             	
             	if (e.getItem().getItemMeta().getDisplayName().contains("§cPig")){
             			
-            			p.getInventory().remove(e.getItem());
-            			p.getInventory().addItem(sheeplauncher);
+            		e.getItem().setItemMeta(sheeplaunchermeta);
             			
-            } else if (e.getItem().getItemMeta().getDisplayName().contains("§cSheep")){
+            	} else if (e.getItem().getItemMeta().getDisplayName().contains("§cSheep")){
             			
-            			p.getInventory().remove(e.getItem());
-            			p.getInventory().addItem(creeperlauncher);
+            		e.getItem().setItemMeta(creeperlaunchermeta);
             			
-            } else if (e.getItem().getItemMeta().getDisplayName().contains("§cCreeper")){
+            	} else if (e.getItem().getItemMeta().getDisplayName().contains("§cCreeper")){
             			
-            			p.getInventory().remove(e.getItem());
-            			p.getInventory().addItem(villagerlauncher);
+            		e.getItem().setItemMeta(villagerlaunchermeta);
             			
             		} else if (e.getItem().getItemMeta().getDisplayName().contains("§cVillager")){
             			
-            			p.getInventory().remove(e.getItem());
-            			p.getInventory().addItem(piglauncher);
+            			e.getItem().setItemMeta(piglaunchermeta);
             			
             		}
             
