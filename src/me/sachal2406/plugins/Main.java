@@ -84,11 +84,32 @@ public class Main extends JavaPlugin implements Listener{
     	final Player player = e.getPlayer();
     	Location location = player.getLocation();
     	PotionEffectType dr = PotionEffectType.DAMAGE_RESISTANCE;
+    	
+    	final ItemStack piglauncher = new ItemStack(Material.BLAZE_ROD, 1);
+    	final ItemMeta piglaunchermeta = piglauncher.getItemMeta();
+    	piglaunchermeta.setDisplayName("§cPig §aLauncher §7(Right click !)");
+    	piglauncher.setItemMeta(piglaunchermeta);
+    
+    	final ItemStack sheeplauncher = new ItemStack(Material.BLAZE_ROD, 1);
+    	final ItemMeta sheeplaunchermeta = sheeplauncher.getItemMeta();
+    	sheeplaunchermeta.setDisplayName("§cSheep §aLauncher §7(Right click !)");
+    	sheeplauncher.setItemMeta(sheeplaunchermeta);
+    
+    	final ItemStack creeperlauncher = new ItemStack(Material.BLAZE_ROD, 1);
+    	final ItemMeta creeperlaunchermeta = creeperlauncher.getItemMeta();
+    	creeperlaunchermeta.setDisplayName("§cCreeper §aLauncher §7(Right click !)");
+    	creeperlauncher.setItemMeta(creeperlaunchermeta);
+    	
+    	final ItemStack villagerlauncher = new ItemStack(Material.BLAZE_ROD, 1);
+    	final ItemMeta villagerlaunchermeta = villagerlauncher.getItemMeta();
+    	villagerlaunchermeta.setDisplayName("§cVillager §aLauncher §7(Right click !)");
+    	villagerlauncher.setItemMeta(villagerlaunchermeta);
     		
     	
             	if ((e.getAction() == Action.RIGHT_CLICK_AIR) || (e.getAction() == Action.RIGHT_CLICK_BLOCK)){
-           
-            	if (e.getItem().getItemMeta().getDisplayName().contains("§cPig")){
+            	if(e.getItem().getType() == Material.BLAZE_ROD){
+            		
+            	if (e.getItem().getItemMeta().equals(piglaunchermeta)){
             		if(!cooldown.contains(player)) {
             	
                 	final Pig pig = (Pig)e.getPlayer().getWorld().spawnEntity(player.getLocation().add(0.0D, 2.0D, 0.0D), EntityType.PIG);
@@ -147,7 +168,7 @@ public class Main extends JavaPlugin implements Listener{
     			return;
     		}
             		
-         } else if (e.getItem().getItemMeta().getDisplayName().contains("§cSheep")){
+         } else if (e.getItem().getItemMeta().equals(sheeplaunchermeta)){
 
      		if(!cooldown.contains(player)) {
      	
@@ -209,7 +230,8 @@ public class Main extends JavaPlugin implements Listener{
 			
 		}
      		
-         } else if (e.getItem().getItemMeta().getDisplayName().contains("§cCreeper")){
+         }
+            	if (e.getItem().getItemMeta().equals(creeperlaunchermeta)){
 
       		if(!cooldown.contains(player)) {
       	
@@ -269,7 +291,8 @@ public class Main extends JavaPlugin implements Listener{
  			player.sendMessage(prefix + config.getString("Wait-Before-Using-Again").replaceAll("&", "§"));
  			return;
  		}
-        } else if (e.getItem().getItemMeta().getDisplayName().contains("§cVillager")){
+        }
+            	if (e.getItem().getItemMeta().equals(villagerlaunchermeta)){
 
       		if(!cooldown.contains(player)) {
       	
@@ -328,48 +351,32 @@ public class Main extends JavaPlugin implements Listener{
  		} else {
  			player.sendMessage(prefix + config.getString("Wait-Before-Using-Again").replaceAll("&", "§"));
  			return;
- 		}
+        }
+        }
         }
             	
           
             	
         } else {
+        	if(e.getItem().getType() == Material.BLAZE_ROD){
             
-            	final ItemStack piglauncher = new ItemStack(Material.BLAZE_ROD, 1);
-            	final ItemMeta piglaunchermeta = piglauncher.getItemMeta();
-            	piglaunchermeta.setDisplayName("§cPig §aLauncher §7(Right click !)");
-            	piglauncher.setItemMeta(piglaunchermeta);
-            
-            	final ItemStack sheeplauncher = new ItemStack(Material.BLAZE_ROD, 1);
-            	final ItemMeta sheeplaunchermeta = sheeplauncher.getItemMeta();
-            	sheeplaunchermeta.setDisplayName("§cSheep §aLauncher §7(Right click !)");
-            	sheeplauncher.setItemMeta(sheeplaunchermeta);
-            
-            	final ItemStack creeperlauncher = new ItemStack(Material.BLAZE_ROD, 1);
-            	final ItemMeta creeperlaunchermeta = creeperlauncher.getItemMeta();
-            	creeperlaunchermeta.setDisplayName("§cCreeper §aLauncher §7(Right click !)");
-            	creeperlauncher.setItemMeta(creeperlaunchermeta);
             	
-            	final ItemStack villagerlauncher = new ItemStack(Material.BLAZE_ROD, 1);
-            	final ItemMeta villagerlaunchermeta = villagerlauncher.getItemMeta();
-            	villagerlaunchermeta.setDisplayName("§cVillager §aLauncher §7(Right click !)");
-            	villagerlauncher.setItemMeta(villagerlaunchermeta);
-            	
-            	if (e.getItem().getItemMeta().getDisplayName().contains("§cPig")){
-            			
+            	if (e.getItem().getItemMeta().equals(piglaunchermeta)){
+            		
             		e.getItem().setItemMeta(sheeplaunchermeta);
             			
-            	} else if (e.getItem().getItemMeta().getDisplayName().contains("§cSheep")){
+            	} else if (e.getItem().getItemMeta().equals(sheeplaunchermeta)){
             			
             		e.getItem().setItemMeta(creeperlaunchermeta);
             			
-            	} else if (e.getItem().getItemMeta().getDisplayName().contains("§cCreeper")){
+            	} else if (e.getItem().getItemMeta().equals(creeperlaunchermeta)){
             			
             		e.getItem().setItemMeta(villagerlaunchermeta);
             			
-            		} else if (e.getItem().getItemMeta().getDisplayName().contains("§cVillager")){
+                } else if (e.getItem().getItemMeta().equals(villagerlaunchermeta)){
             			
-            			e.getItem().setItemMeta(piglaunchermeta);
+            	    e.getItem().setItemMeta(piglaunchermeta);
+            		}
             			
             		}
             
